@@ -1,0 +1,50 @@
+header{
+    background-color: blueviolet;
+    height: 70px;
+}
+main{
+    background-color: aqua;
+    height: 100%;
+    margin: auto;
+}
+footer{
+    background-color: chartreuse;
+    height: 80px;
+}
+/*div{
+    background-color: darkgoldenrod;
+}
+*/
+#usrName{
+    width: 100px;
+    position: absolute;
+    right: 0px;
+}
+html body{
+    margin: 0;
+    padding: 0;
+}
+p{
+    margin: 0;
+}
+h3{
+    margin: 0;
+}
+
+
+.Task{
+    /*
+    visibility: hidden;
+    */
+    
+    position: absolute;
+}
+.button{
+    cursor: pointer;
+    background-color: yellow;
+    
+    
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+}
