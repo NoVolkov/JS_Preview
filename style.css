@@ -33,17 +33,16 @@ h3{
 
 
 .Task{
-    /*
+    
     visibility: hidden;
-    */
+    
     
     position: absolute;
 }
 .button{
     cursor: pointer;
     background-color: yellow;
-    
-    
+        
     border-width: 2px;
     border-color: black;
     border-style: solid;

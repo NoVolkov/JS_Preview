@@ -13,7 +13,7 @@
             
         </div>
         <div>
-            <p id="usrName">Привет, гость.</p>
+            <p id="usrName"></p>
         </div>
     </header>
     <main>
@@ -32,26 +32,46 @@
             <h3>Демонстрация</h3>
             <p></p>
             <div>
-                <div onclick="alert('ryjgdfs')" class="button">
-                    <p>Button</p>
+                <div onclick="disclosure('formTask_0')" class="button">
+                    <p>Задача 0</p>
                 </div>
-                <div id="task_1"></div>
-                <div id="task_2"></div>
-                <div id="task_3"></div>
-                <div id="task_4"></div>
-                <div id="task_5"></div>
-                <div id="task_6"></div>
+                <div onclick="disclosure('formTask_1')" class="button">
+                    <p>Задача 1</p>
+                </div>
+                <div onclick="disclosure('formTask_2')" class="button">
+                    <p>Задача 2</p>
+                </div>
+                <div onclick="disclosure('formTask_3')" class="button">
+                    <p>Задача 3</p>
+                </div>
+                <div onclick="disclosure('formTask_4')" class="button">
+                    <p>Задача 4</p>
+                </div>
+                <div onclick="disclosure('formTask_5')" class="button">
+                    <p>Задача 5</p>
+                </div>
+                <div onclick="disclosure('formTask_6')" class="button">
+                    <p>Задача 6</p>
+                </div>
             </div>
         </div>
         <!--Скрытые задачи-->
         <div class="Task">
-            <div>
-                <form id="formTask_0">
+            <div id="formTask_0">
+                <form>
                     <p>Введите своё имя:</p>
                     <input type="text" name="User">
                     <input type="submit" value="Запомнить">
                 </form>
             </div>
+            <div id="formTask_1">
+                
+            </div>
+            <div id="formTask_2"></div>
+            <div id="formTask_3"></div>
+            <div id="formTask_4"></div>
+            <div id="formTask_5"></div>
+            <div id="formTask_6"></div>
         </div>
     </main>
     <footer></footer>
