@@ -46,13 +46,17 @@ dcmt.getElementById("formTask_2").addEventListener("submit", function(event){
 //Задание 3
 dcmt.getElementById("formTask_3").addEventListener("submit", function(event){
     event.preventDefault();
-    let res[]={};
-    dcmt.getElementByName("Massive_1").forEach(function (input) {
-        for(let i=0;i<res.length;i++){
-            
-        }
-    });
+    let max=0, min=0;
+    for(let i=0;i<5;i++){
+        dcmt.getElementByName("Num_"+i).forEach(function (input) {
+            if(input.value>0)max=input.value;
+            if(input.value<=max)max=input.value;
+        });
+    }
+    dcmt.getElementById("Min").textContent="Min: "+min;
+    dcmt.getElementById("Max").textContent="Max: "+max;
 });
+
 
 
 
