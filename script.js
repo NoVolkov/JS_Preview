@@ -8,11 +8,11 @@ let printName = function () {
     } else {
         Name += localStorage.getItem("Uname");
     }
-    dcmt.getElementByName("User").forEach(function (input) {
+    dcmt.getElementsByName("User").forEach(function (input) {
         dcmt.getElementById("usrName").textContent = "Привет, " + Name;
     });
 }
-
+//Расскрытие блока
 let disclosure=function(task){
     dcmt.getElementById(task).style.visibility="visible";
 }
@@ -30,13 +30,13 @@ dcmt.getElementById("formTask_2").addEventListener("submit", function(event){
     event.preventDefault();
     let str1="";
     let str2="";
-    dcmt.getElementByName("String_1").forEach(function (input) {
+    dcmt.getElementsByName("String_1").forEach(function (input) {
         str1+=input.value;
     });
-    dcmt.getElementByName("String_2").forEach(function (input) {
+    dcmt.getElementsByName("String_2").forEach(function (input) {
         str2+=input.value;
     });
-    if(str1.lenght==str2.length){
+    if(str1.length==str2.length){
         dcmt.getElementById("TrOrFl").textContent="true";
     }else{
         dcmt.getElementById("TrOrFl").textContent="false";
@@ -46,12 +46,24 @@ dcmt.getElementById("formTask_2").addEventListener("submit", function(event){
 //Задание 3
 dcmt.getElementById("formTask_3").addEventListener("submit", function(event){
     event.preventDefault();
+    let arr=[];
     let max=0, min=0;
     for(let i=0;i<5;i++){
-        dcmt.getElementByName("Num_"+i).forEach(function (input) {
-            if(input.value>=0)max=input.value;
-            if(input.value<max)min=input.value;
+        dcmt.getElementsByName("Num_"+i).forEach(function (input) {
+            arr[i]=input.value;
         });
+    }
+    console.log(arr);
+    min=arr[0];
+    for(let i=0;i<5;i++){
+        if(arr[i]>min){
+            max=arr[i];
+            continue;
+        }
+        if(arr[i]<min){
+            min=arr[i];
+            continue;
+        }
     }
     dcmt.getElementById("Min").textContent="Min: "+min;
     dcmt.getElementById("Max").textContent="Max: "+max;
