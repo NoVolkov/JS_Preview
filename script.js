@@ -48,20 +48,27 @@ dcmt.getElementById("formTask_3").addEventListener("submit", function (event) {
     event.preventDefault();
     let arr = [];
     let max = 0, min = 0;
+    let copy=0;
     for (let i = 0; i < 5; i++) {
-        dcmt.getElementsByName("Num_" + i).forEach(function (input) {
-            arr[i] = input.value;
-        });
-    }
-    console.log(arr);
-    min = arr[0];
-    for (let i = 0; i < 5; i++) {
-        if (arr[i] > min) {
-            max = arr[i];
+        copy=dcmt.getElementsByName("Num_" + i)[0].value;
+        console.log(copy);
+        if (copy > max) {
+            max = copy;
             continue;
         }
-        if (arr[i] < min) {
-            min = arr[i];
+        if(copy<0){
+            if(copy<min){
+                min=copy;
+                continue;
+            }
+        }
+        if(copy>0){
+            if(copy<)
+        }
+        if (copy < max) {
+            if(copy<min){
+                min = copy;
+            }
             continue;
         }
     }
@@ -69,30 +76,30 @@ dcmt.getElementById("formTask_3").addEventListener("submit", function (event) {
     dcmt.getElementById("Max").textContent = "Max: " + max;
 });
 //Задание 4 ---- таймер
-
 dcmt.getElementById("formTask_4").addEventListener("submit", function (event) {
     event.preventDefault();
+    //запуск таймера
     if (dcmt.getElementsByName("TimeButton")[0].value == "Старт") {
-        if(timer.timeValue(
+        if (timer.timeValue(
             dcmt.getElementsByName("HH")[0].value,
             dcmt.getElementsByName("MM")[0].value,
             dcmt.getElementsByName("SS")[0].value
-        )){
+        )) {
             timer.Button = true;
             timer.workTime();
             dcmt.getElementsByName("TimeButton")[0].value = "Пауза";
-            dcmt.getElementById("timerMessage").textContent="Таймер запущен.";
-        }else{
-            dcmt.getElementById("timerMessage").textContent="Введены неверные значения";
+            dcmt.getElementById("timerMessage").textContent = "Таймер запущен.";
+        } else {
+            dcmt.getElementById("timerMessage").textContent = "Введены неверные значения";
         }
+        //остановка таймера
     } else {
         if (dcmt.getElementsByName("TimeButton")[0].value == "Пауза") {
             timer.Button = false;
             dcmt.getElementsByName("TimeButton")[0].value = "Старт"
-            dcmt.getElementById("timerMessage").textContent="Таймер остановлен.";
+            dcmt.getElementById("timerMessage").textContent = "Таймер остановлен.";
         }
     }
-
 });
 class Timer {
     constructor(hh, mm, ss) {
@@ -100,46 +107,46 @@ class Timer {
         this.Button = true;
     }
     timeValue(hh, mm, ss) {
-        if (hh < 0 || mm<0 ||mm>59||ss<0||ss>59)return false;
+        if (hh < 0 || mm < 0 || mm > 59 || ss < 0 || ss > 59) return false;
         this.hh = Number(hh);
         this.mm = Number(mm);
         this.ss = Number(ss);
         return true;
     }
+    //цикл работы таймера
     workTime() {
         const timeID = setInterval(
             () => {
+                //остановка при достижении 0 или паузы
                 if ((this.hh <= 0 && this.mm <= 0 && this.ss <= 0) ||
-                    this.Button == false
-                ) {
+                    this.Button == false) {
                     clearTimeout(timeID);
-                    //console.log("end");
                 } else {
                     this.ss--;
                     if (this.ss < 0) {
                         this.mm--;
                         this.ss = 59;
                     }
-
                     if (this.mm < 0) {
                         this.hh--;
                         this.mm = 59;
                     }
                 }
-
-
-
                 this.showTime();
+                //при достижении 0
+                if (this.hh <= 0 && this.mm <= 0 && this.ss <= 0) {
+                    dcmt.getElementsByName("TimeButton")[0].value = "Старт"
+                    dcmt.getElementById("timerMessage").textContent = "Время прошло.";
+                }
             }, 1000
         );
     }
+    //отображение таймера
     showTime() {
-        //console.log(this.hh+":"+this.mm+":"+this.ss);
         dcmt.getElementsByName("HH")[0].value = (this.hh < 10) ? "0" + this.hh : this.hh;
         dcmt.getElementsByName("MM")[0].value = (this.mm < 10) ? "0" + this.mm : this.mm;
         dcmt.getElementsByName("SS")[0].value = (this.ss < 10) ? "0" + this.ss : this.ss;
     }
-
 }
 
 
