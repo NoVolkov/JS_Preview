@@ -65,7 +65,13 @@
                 </form>
             </div>
             <div id="formTask_1">
-                
+                <form>
+                    <p>Введите основание и высоту треугольника, чтобы рассчитать его площадь.</p>
+                    <input type="number" id="inpNum" min="0"  name="Base">
+                    <input type="number" id="inpNum" min="0"  name="Height">
+                    <input type="submit" value="Рассчитать">
+                    <p id="areaTri"></p>
+                </form>
             </div>
             <div id="formTask_2">
                 <form>
@@ -92,9 +98,9 @@
             <div id="formTask_4">
                 <form>
                     <p>Введите время Часы / Минуты / Секунды:</p>
-                    <input type="number" name="HH">
-                    <input type="number" name="MM">
-                    <input type="number" name="SS">
+                    <input type="number" id="inpNum" min="0" name="HH">
+                    <input type="number" id="inpNum" min="0" max="59" name="MM">
+                    <input type="number" id="inpNum" min="0" max="59" name="SS">
                     <input type="submit" name="TimeButton" value="Старт">
                     <p id="timerMessage"></p>
                 </form>

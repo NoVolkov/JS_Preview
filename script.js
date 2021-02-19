@@ -15,6 +15,7 @@ let printName = function () {
 //Расскрытие блока
 let disclosure = function (task) {
     dcmt.getElementById(task).style.visibility = "visible";
+    
 }
 
 //Задание 0 ---- работает
@@ -25,17 +26,20 @@ dcmt.getElementById("formTask_0").addEventListener("submit", function (event) {
     });
     printName();
 });
-//Задание 2 ---- работает
+//Задание 1 ---- площадь треугольника
+dcmt.getElementById("formTask_1").addEventListener("submit", function(event){
+    event.preventDefault();
+    let a=dcmt.getElementsByName("Base")[0].value,
+        h=dcmt.getElementsByName("Height")[0].value;
+    dcmt.getElementById("areaTri").textContent=a+"*"+h+"/2="+a*h/2;
+});
+//Задание 2 ---- длины строк
 dcmt.getElementById("formTask_2").addEventListener("submit", function (event) {
     event.preventDefault();
     let str1 = "";
     let str2 = "";
-    dcmt.getElementsByName("String_1").forEach(function (input) {
-        str1 += input.value;
-    });
-    dcmt.getElementsByName("String_2").forEach(function (input) {
-        str2 += input.value;
-    });
+    str1+=dcmt.getElementsByName("String_1")[0].value;
+    str2+=dcmt.getElementsByName("String_2")[0].value;
     if (str1.length == str2.length) {
         dcmt.getElementById("TrOrFl").textContent = "true";
     } else {
@@ -43,37 +47,16 @@ dcmt.getElementById("formTask_2").addEventListener("submit", function (event) {
     }
 });
 
-//Задание 3 ---- доработать
+//Задание 3 ---- max min
 dcmt.getElementById("formTask_3").addEventListener("submit", function (event) {
     event.preventDefault();
     let arr = [];
-    let max = 0, min = 0;
     let copy=0;
     for (let i = 0; i < 5; i++) {
-        copy=dcmt.getElementsByName("Num_" + i)[0].value;
-        console.log(copy);
-        if (copy > max) {
-            max = copy;
-            continue;
-        }
-        if(copy<0){
-            if(copy<min){
-                min=copy;
-                continue;
-            }
-        }
-        if(copy>0){
-            if(copy<)
-        }
-        if (copy < max) {
-            if(copy<min){
-                min = copy;
-            }
-            continue;
-        }
+        arr[i]=dcmt.getElementsByName("Num_" + i)[0].value;
     }
-    dcmt.getElementById("Min").textContent = "Min: " + min;
-    dcmt.getElementById("Max").textContent = "Max: " + max;
+    dcmt.getElementById("Min").textContent = "Min: " + Math.min.apply(null,arr);
+    dcmt.getElementById("Max").textContent = "Max: " + Math.max.apply(null,arr);
 });
 //Задание 4 ---- таймер
 dcmt.getElementById("formTask_4").addEventListener("submit", function (event) {
@@ -89,6 +72,9 @@ dcmt.getElementById("formTask_4").addEventListener("submit", function (event) {
             timer.workTime();
             dcmt.getElementsByName("TimeButton")[0].value = "Пауза";
             dcmt.getElementById("timerMessage").textContent = "Таймер запущен.";
+            dcmt.getElementsByName("HH")[0].disabled=true;
+            dcmt.getElementsByName("MM")[0].disabled=true;
+            dcmt.getElementsByName("SS")[0].disabled=true;
         } else {
             dcmt.getElementById("timerMessage").textContent = "Введены неверные значения";
         }
@@ -121,6 +107,9 @@ class Timer {
                 if ((this.hh <= 0 && this.mm <= 0 && this.ss <= 0) ||
                     this.Button == false) {
                     clearTimeout(timeID);
+                    dcmt.getElementsByName("HH")[0].disabled=false;
+                    dcmt.getElementsByName("MM")[0].disabled=false;
+                    dcmt.getElementsByName("SS")[0].disabled=false;
                 } else {
                     this.ss--;
                     if (this.ss < 0) {
