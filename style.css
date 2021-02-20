@@ -6,6 +6,7 @@ main{
     background-color: aqua;
     height: 100%;
     margin: auto;
+    
 }
 footer{
     background-color: chartreuse;
@@ -24,20 +25,61 @@ html body{
     margin: 0;
     padding: 0;
 }
+
+
 p{
     margin: 0;
 }
 h3{
     margin: 0;
 }
+#menu{
 
-
-.Task{
-    
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#menu p{
+    display: flex;
+    flex-wrap: wrap;
+}
+#shadow{
     visibility: hidden;
-    
-    
+    width: 100%;
+    height: 100%;
     position: absolute;
+    z-index: 2;
+    top: 0;
+    cursor: auto;
+    background: rgb(0, 0, 0, 0.33);
+    border-width: 0;
+}
+.Task{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+pre{
+    margin: 0;
+}
+.Task div{
+    z-index: 3;
+    visibility: hidden;
+    background-color: rgb(55, 216, 216);
+    width: 60%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border-width: 5px;
+    border-color: bisque;
+    border-style: solid;
+    position: absolute;
+    bottom: 0px;
+
 }
 .button{
     cursor: pointer;
@@ -46,6 +88,27 @@ h3{
     border-width: 2px;
     border-color: black;
     border-style: solid;
+}
+#name{
+    color:azure;
+    position: absolute;
+    left: 5px;
+    bottom: 10px;
+    font-size: 20px;
+    text-shadow: 2px 2px 1px  black;
+}
+#date{
+    color:azure;
+    position: absolute;
+    left: 5px;
+    bottom: 30px;
+    font-size: 20px;
+    text-shadow: 2px 2px 1px  black;
+}
+#formTask_6 img{
+    width: 100%;
+    border-radius: 15px;
+    align-items: flex-start;
 }
 #inpNum{
     width: 30px;
