@@ -1,29 +1,60 @@
 header{
-    background-color: blueviolet;
+    background-color: aqua;
+    width: 1500px;
+    margin: auto;
     height: 70px;
+    font-size: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#usrName{
+    margin-right: 10px;
 }
 main{
     background-color: aqua;
     height: 100%;
+    width: 1500px;
     margin: auto;
-    
 }
 footer{
     background-color: chartreuse;
     height: 80px;
-}
-/*div{
-    background-color: darkgoldenrod;
-}
-*/
-#usrName{
-    width: 100px;
     position: absolute;
-    right: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+
+#text{
+    margin-bottom: 150px;
+    max-width: 50%;
+}
+#img{
+    margin: auto;
+}
+#img img{
+    width: 350px;
+    
+    
+}
+#mDIV{
+    display: flex;
+    align-items: center;
+}
+#mDIV h3{
+    
+    margin-left: 15px;
+}
+#mDIV p{
+    margin-left: 15px;
+}
+#menu p{
+    margin-left: 0px;
 }
 html body{
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -34,7 +65,8 @@ h3{
     margin: 0;
 }
 #menu{
-
+    margin-top: 15px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -47,13 +79,18 @@ h3{
 #shadow{
     visibility: hidden;
     width: 100%;
-    height: 100%;
+    height: 1381px;
     position: absolute;
     z-index: 2;
     top: 0;
     cursor: auto;
     background: rgb(0, 0, 0, 0.33);
     border-width: 0;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    padding: 0px;
 }
 .Task{
     display: flex;
@@ -68,7 +105,8 @@ pre{
     z-index: 3;
     visibility: hidden;
     background-color: rgb(55, 216, 216);
-    width: 60%;
+    
+    max-width: 60%;
     flex-direction: column;
     display: flex;
     justify-content: center;
@@ -78,30 +116,33 @@ pre{
     border-color: bisque;
     border-style: solid;
     position: absolute;
-    bottom: 0px;
-
+    top: 0px;
+    padding: 5px;
+    font-size: 15px;
 }
 .button{
     cursor: pointer;
     background-color: yellow;
         
-    border-width: 2px;
+    border-width: 1px;
     border-color: black;
+    border-radius: 4px;
     border-style: solid;
+    padding: 5px;
 }
 #name{
     color:azure;
     position: absolute;
-    left: 5px;
-    bottom: 10px;
+    margin-left: 15px;
+    top: 10px;
     font-size: 20px;
     text-shadow: 2px 2px 1px  black;
 }
 #date{
     color:azure;
     position: absolute;
-    left: 5px;
-    bottom: 30px;
+    margin-left: 15px;
+    top: 30px;
     font-size: 20px;
     text-shadow: 2px 2px 1px  black;
 }

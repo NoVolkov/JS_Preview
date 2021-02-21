@@ -41,10 +41,8 @@ dcmt.getElementById("formTask_1").addEventListener("submit", function (event) {
 //Задание 2 ---- длины строк
 dcmt.getElementById("formTask_2").addEventListener("submit", function (event) {
     event.preventDefault();
-    let str1 = "";
-    let str2 = "";
-    str1 += dcmt.getElementsByName("String_1")[0].value;
-    str2 += dcmt.getElementsByName("String_2")[0].value;
+    let str1 = dcmt.getElementsByName("String_1")[0].value;
+    let str2 = dcmt.getElementsByName("String_2")[0].value;
     if (str1.length == str2.length) {
         dcmt.getElementById("TrOrFl").textContent = "true";
     } else {
@@ -155,7 +153,6 @@ let disclosure_6=function(){
     dcmt.getElementById("image").src="img/img_"+rand+".jpg";
     dcmt.getElementById("date").textContent=d.getDate()+"."+(d.getMonth()+1)+"."+d.getFullYear();
     dcmt.getElementById("name").textContent="Пользователь: "+n;
-    console.log(rand);
 }
 
 //функции и переменные при запуске сраницы
